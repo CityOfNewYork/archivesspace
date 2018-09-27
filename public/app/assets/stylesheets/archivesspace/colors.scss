@@ -13,8 +13,11 @@ $highlight: #f7d309;
 $dark_against_shade: #004f6f;  /* for contrast against lightshade */
 /* this is where you can change colors for your institution */
 
-$primary-color: $lightblue;
-$secondary-color: $midblue;
+$doris_primary: #5B3F99;
+$doris_secondary: #19297C;
+
+$primary-color: $doris_primary;
+$secondary-color: $doris_secondary;
 $accent-color: $darkblue;
 $border-accent: $darkblue;
 $border: $shade;
