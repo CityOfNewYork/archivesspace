@@ -8,11 +8,10 @@
 
     <%= render partial: 'shared/search', locals: {
       :search_url => "/search",
-      :title => t('archive._plural'),
+      :title => t('brand.welcome_search_label'),
       :limit_options => [
-            ["#{t('actions.search')} #{t('search-limits.all')}",''],
             [t('search-limit', :limit => t('search-limits.resources')),'resource'],
-            [t('search-limit', :limit => t('search-limits.digital')),'digital_object']
+            ["#{t('actions.search')} #{t('search-limits.all')}",'all']
           ],
       :field_options => [
             ["#{t('search_results.filter.fullrecord')}",''],
@@ -23,3 +22,25 @@
             ["#{t('search_results.filter.identifier')}", 'four_part_id']
            ]
     } %>
+<div class="col-sm-12">
+  <div class="row">
+    <h3>Use the headers across the top of the page to browse our holdings:</h3>
+  </div>
+  <div class="row">
+    <h4><a href="/repositories/resources/">Collections</a></h4>
+    <p>Our archive is composed of many different sets or groupings of archives, usually defined by the agency which created them. Browse through our collections of archival material.</p>
+  </div>
+  <div class="row">
+    <h4><a href="/subjects">Subjects</a></h4>
+    <p>Browse by subject to find out what we have related to certain topics, geographic locations, genres of material, and occupations. We have assigned subjects to all of our collections.</p>
+  </div>
+  <div class="row">
+    <h4><a href="/agents">Names</a></h4>
+    <p>Doing research on a particular person or organization? Browse by names to find collections created by, or associated with, particular individuals, families, or corporate bodies. </p>
+  </div>
+  <div class="row">
+    <h4><a href="/classifications">Record Groups</a></h4>
+    <p>Browse by record groups to find collections arranged by particular government functions. </p>
+    <p>Holdings at the Municipal Archives are arranged into Record Groups according to where the records came from, typically a city agency. Each record group is a “bucket” containing records created by that agency and predecessor and related agencies. A fuller explanation of the Record Group system is <a href="https://nycrecords.atlassian.net/wiki/spaces/MAGuides/pages/55239273/Outline+of+Record+Groups" rel="noreferrer" target="_blank">available here</a>.<p>
+  </div>
+</div>

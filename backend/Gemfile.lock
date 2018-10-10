@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -101,6 +102,9 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-debug-base (0.10.6-java)
     ruby-progressbar (1.10.0)
+    rubyXL (3.3.29)
+      nokogiri (>= 1.4.4)
+      rubyzip (>= 1.1.6)
     rubyzip (1.2.2)
     rufus-lru (1.0.5)
     rufus-scheduler (2.0.24)
@@ -174,6 +178,7 @@ DEPENDENCIES
   rspec (~> 3.6.0)
   rspec-core
   rubocop (~> 0.54.0)
+  rubyXL (= 3.3.29)
   rubyzip (~> 1.2.2)
   rufus-lru (= 1.0.5)
   rufus-scheduler (~> 2.0.24)
