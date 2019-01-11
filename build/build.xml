@@ -730,14 +730,6 @@
       <fileset dir="../docs" />
     </copy>
 
-    <copy todir="target/archivesspace/plugins/newrelic">
-      <fileset dir="../plugins/newrelic"/>
-    </copy>
-
-    <copy todir="target/archivesspace/plugins/cat_in_a_box">
-      <fileset dir="../plugins/cat_in_a_box"/>
-    </copy>
-
     <copy todir="target/archivesspace/plugins/refid_rules">
       <fileset dir="../plugins/refid_rules"/>
     </copy>
@@ -745,6 +737,11 @@
     <copy todir="target/archivesspace/plugins/lcnaf">
       <fileset dir="../plugins/lcnaf"/>
     </copy>
+
+    <copy todir="target/archivesspace/plugins/aspace-import-excel">
+      <fileset dir="../plugins/aspace-import-excel"/>
+    </copy>
+
 
     <copy todir="target/archivesspace/stylesheets">
       <fileset dir="../stylesheets"/>
