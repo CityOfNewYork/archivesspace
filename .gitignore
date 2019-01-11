@@ -47,4 +47,7 @@ backend/default
 frontend/default
 indexer/default
 public/default
+tech_docs
+
+# DORIS .gitignore
 *.sql
