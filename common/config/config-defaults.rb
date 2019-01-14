@@ -64,7 +64,6 @@ AppConfig[:pui_log_level] = "debug"
 AppConfig[:indexer_log] = "default"
 AppConfig[:indexer_log_level] = "debug"
 
-
 # Set to true to log all SQL statements.  Note that this will have a performance
 # impact!
 AppConfig[:db_debug_log] = false
@@ -86,7 +85,7 @@ AppConfig[:solr_backup_directory] = proc { File.join(AppConfig[:data_directory],
 #      "ps" => 0,
 #    }
 # Configuring search operator to be AND by default - ANW-427
-AppConfig[:solr_params] = { "q.op" => "AND" }
+AppConfig[:solr_params] = {"q.op" => "AND"}
 
 # Set the application's language (see the .yml files in
 # https://github.com/archivesspace/archivesspace/tree/master/common/locales for
@@ -94,7 +93,7 @@ AppConfig[:solr_params] = { "q.op" => "AND" }
 AppConfig[:locale] = :en
 
 # Plug-ins to load. They will load in the order specified
-AppConfig[:plugins] = ['local',  'lcnaf']
+AppConfig[:plugins] = ["local", "lcnaf", "aspace-import-excel"]
 
 # The number of concurrent threads available to run background jobs
 # Resist the urge to set this to a big number as it will affect performance
@@ -102,13 +101,12 @@ AppConfig[:job_thread_count] = 2
 
 # DEPRECATED: Moved to database in ANW-674
 #AppConfig[:oai_repository_name] = 'ArchivesSpace OAI Provider'
-AppConfig[:oai_proxy_url] = 'http://your-public-oai-url.example.com'
+AppConfig[:oai_proxy_url] = "http://your-public-oai-url.example.com"
 
-# DEPRECATED 
-AppConfig[:oai_admin_email] = 'admin@example.com'
-AppConfig[:oai_record_prefix] = 'oai:archivesspace'
-AppConfig[:oai_repository_name] = 'ArchivesSpace OAI Provider'
-
+# DEPRECATED
+AppConfig[:oai_admin_email] = "admin@example.com"
+AppConfig[:oai_record_prefix] = "oai:archivesspace"
+AppConfig[:oai_repository_name] = "ArchivesSpace OAI Provider"
 
 # In addition to the sets based on level of description, you can define OAI Sets
 # based on repository codes and/or sponsors as follows
@@ -173,7 +171,7 @@ AppConfig[:pui_indexing_frequency_seconds] = 30
 AppConfig[:pui_indexer_records_per_thread] = 25
 AppConfig[:pui_indexer_thread_count] = 1
 
-AppConfig[:index_state_class] = 'IndexState' # set to 'IndexStateS3' for amazon s3
+AppConfig[:index_state_class] = "IndexState" # set to 'IndexStateS3' for amazon s3
 # # store indexer state in amazon s3 (optional)
 # # NOTE: s3 charges for read / update requests and the pui indexer is continually
 # # writing to state files so you may want to increase pui_indexing_frequency_seconds
@@ -188,7 +186,6 @@ AppConfig[:index_state_class] = 'IndexState' # set to 'IndexStateS3' for amazon 
 AppConfig[:allow_other_unmapped] = false
 
 AppConfig[:db_url_redacted] = proc { AppConfig[:db_url].gsub(/(user|password)=(.*?)(&|$)/, '\1=[REDACTED]\3') }
-
 
 AppConfig[:demo_db_backup_schedule] = "0 4 * * *"
 
@@ -231,7 +228,6 @@ AppConfig[:enable_oai] = true
 #
 AppConfig[:use_jetty_shutdown_handler] = false
 AppConfig[:jetty_shutdown_path] = "/xkcd"
-
 
 # If you have multiple instances of the backend running behind a load
 # balancer, list the URL of each backend instance here.  This is used by the
@@ -293,7 +289,6 @@ AppConfig[:help_enabled] = true
 AppConfig[:help_url] = "http://docs.archivesspace.org"
 AppConfig[:help_topic_prefix] = "/Default_CSH.htm#"
 
-
 AppConfig[:shared_storage] = proc { File.join(AppConfig[:data_directory], "shared") }
 
 # formerly known as :import_job_path
@@ -304,7 +299,6 @@ AppConfig[:job_poll_seconds] = proc { AppConfig.has_key?(:import_poll_seconds) ?
 
 # and this
 AppConfig[:job_timeout_seconds] = proc { AppConfig.has_key?(:import_timeout_seconds) ? AppConfig[:import_timeout_seconds] : 300 }
-
 
 # By default, only allow jobs to be cancelled if we're running against MySQL (since we can rollback)
 AppConfig[:jobs_cancelable] = proc { (AppConfig[:db_url] != AppConfig.demo_db_url).to_s }
@@ -367,48 +361,48 @@ AppConfig[:jetty_request_buffer_size_bytes] = 64 * 1024
 AppConfig[:record_inheritance] = {
   :archival_object => {
     :inherited_fields => [
-                          {
-                            :property => 'title',
-                            :inherit_directly => true
-                          },
-                          {
-                            :property => 'component_id',
-                            :inherit_directly => false
-                          },
-                          {
-                            :property => 'language',
-                            :inherit_directly => true
-                          },
-                          {
-                            :property => 'dates',
-                            :inherit_directly => true
-                          },
-                          {
-                            :property => 'extents',
-                            :inherit_directly => false
-                          },
-                          {
-                            :property => 'linked_agents',
-                            :inherit_if => proc {|json| json.select {|j| j['role'] == 'creator'} },
-                            :inherit_directly => false
-                          },
-                          {
-                            :property => 'notes',
-                            :inherit_if => proc {|json| json.select {|j| j['type'] == 'accessrestrict'} },
-                            :inherit_directly => true
-                          },
-                          {
-                            :property => 'notes',
-                            :inherit_if => proc {|json| json.select {|j| j['type'] == 'scopecontent'} },
-                            :inherit_directly => false
-                          },
-                          {
-                            :property => 'notes',
-                            :inherit_if => proc {|json| json.select {|j| j['type'] == 'langmaterial'} },
-                            :inherit_directly => false
-                          },
-                         ]
-  }
+                           {
+                             :property => "title",
+                             :inherit_directly => true,
+                           },
+                           {
+                             :property => "component_id",
+                             :inherit_directly => false,
+                           },
+                           {
+                             :property => "language",
+                             :inherit_directly => true,
+                           },
+                           {
+                             :property => "dates",
+                             :inherit_directly => true,
+                           },
+                           {
+                             :property => "extents",
+                             :inherit_directly => false,
+                           },
+                           {
+                             :property => "linked_agents",
+                             :inherit_if => proc { |json| json.select { |j| j["role"] == "creator" } },
+                             :inherit_directly => false,
+                           },
+                           {
+                             :property => "notes",
+                             :inherit_if => proc { |json| json.select { |j| j["type"] == "accessrestrict" } },
+                             :inherit_directly => true,
+                           },
+                           {
+                             :property => "notes",
+                             :inherit_if => proc { |json| json.select { |j| j["type"] == "scopecontent" } },
+                             :inherit_directly => false,
+                           },
+                           {
+                             :property => "notes",
+                             :inherit_if => proc { |json| json.select { |j| j["type"] == "langmaterial" } },
+                             :inherit_directly => false,
+                           },
+                         ],
+  },
 }
 
 # To enable composite identifiers - added to the merged record in a property _composite_identifier
@@ -469,7 +463,7 @@ AppConfig[:record_inheritance] = {
 # TODO: Clean up configuration options
 
 AppConfig[:pui_search_results_page_size] = 10
-AppConfig[:pui_branding_img] = 'dorislogo.png'
+AppConfig[:pui_branding_img] = "dorislogo.png"
 AppConfig[:pui_block_referrer] = true # patron privacy; blocks full 'referer' when going outside the domain
 AppConfig[:pui_enable_staff_link] = true # attempt to add a link back to the staff interface
 
@@ -483,9 +477,9 @@ AppConfig[:pui_pdf_timeout] = 600
 
 # The following determine which 'tabs' are on the main horizontal menu
 AppConfig[:pui_hide] = {}
-AppConfig[:pui_hide][:repositories] = false
+AppConfig[:pui_hide][:repositories] = true
 AppConfig[:pui_hide][:resources] = false
-AppConfig[:pui_hide][:digital_objects] = false
+AppConfig[:pui_hide][:digital_objects] = true
 AppConfig[:pui_hide][:accessions] = false
 AppConfig[:pui_hide][:subjects] = false
 AppConfig[:pui_hide][:agents] = false
@@ -505,7 +499,7 @@ AppConfig[:pui_hide][:counts] = false
 AppConfig[:pui_hide][:container_inventory] = false
 # Other usage examples:
 # Don't display the accession ("unprocessed material") link on the main navigation menu
-# AppConfig[:pui_hide][:accessions] = true
+AppConfig[:pui_hide][:accessions] = true
 
 # Whether to display linked decaccessions
 AppConfig[:pui_display_deaccessions] = true
@@ -514,12 +508,12 @@ AppConfig[:pui_display_deaccessions] = true
 AppConfig[:pui_readmore_max_characters] = 450
 
 # Enable / disable PUI resource/archival object page actions
-AppConfig[:pui_page_actions_cite] = true
+AppConfig[:pui_page_actions_cite] = false
 AppConfig[:pui_page_actions_bookmark] = true
-AppConfig[:pui_page_actions_request] = true
+AppConfig[:pui_page_actions_request] = false
 AppConfig[:pui_page_actions_print] = true
 
-# PUI Request Function (used when AppConfig[:pui_page_actions_request] = true)                            
+# PUI Request Function (used when AppConfig[:pui_page_actions_request] = true)
 # the following determine on what kinds of records the request button is displayed
 AppConfig[:pui_requests_permitted_for_types] = [:resource, :archival_object, :accession, :digital_object, :digital_object_component]
 AppConfig[:pui_requests_permitted_for_containers_only] = false # set to 'true' if you want to disable if there is no top container
