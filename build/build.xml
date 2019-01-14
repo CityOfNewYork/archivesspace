@@ -674,7 +674,7 @@
     <mkdir dir="target/archivesspace/plugins/newrelic" />
     <mkdir dir="target/archivesspace/plugins/refid_rules" />
     <mkdir dir="target/archivesspace/plugins/lcnaf" />
-    <mkdir dir="target/archivesspace/plugins/aspace-import-excel" />>
+    <mkdir dir="target/archivesspace/plugins/aspace-import-excel" />
     <mkdir dir="target/archivesspace/plugins/local/indexer" />
     <mkdir dir="target/archivesspace/plugins/local/schemas" />
     <mkdir dir="target/archivesspace/plugins/local/backend/model/mixins" />

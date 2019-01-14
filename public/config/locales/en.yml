@@ -349,8 +349,8 @@ en:
   context: Found in
   context_delimiter: "/"
   bulk:
-     _singular: "Bulk of material found in %{dates}"
-     _plural: "Bulk of material found within %{dates}"
+     _singular: "bulk %{dates}"
+     _plural: "bulk %{dates}"
 
   resource:
     _singular: Collection
