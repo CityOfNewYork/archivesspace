@@ -1,0 +1,17 @@
+rhsn:
+  # If you don't have credentials for RedHat Subscriptions, visit https://developers.redhat.com/
+  username: "username"
+  password: "password"
+  # Choose a unique name to identify this VM in the RHSN Management Portal
+  computer_name: "computer_name"
+vm_options:
+  # Allocated RAM (Defauit is 1 GB)
+  vb_memory: 1024
+proxy_settings:
+  # Setup the proxy on a VM (if needed)
+  use_proxy: true
+  http_proxy: ""
+  https_proxy: ""
+  no_proxy: ""s
+  proxy_host: ""
+  proxy_port: ""
