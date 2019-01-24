@@ -26,7 +26,8 @@ en:
    home: Home
    welcome_head: Welcome to the Municipal Archives
    welcome_message: |
-                    <p>The Municipal Archives preserves and makes available New York City government's historical records. Our collections date from 1645 to the present. Use this site to explore descriptions of our unique material including office records, manuscripts, still and moving images, vital records, maps, blueprints, and sound recordings.</p>
+                    <p>The Municipal Archives preserves and makes available New York City government's historical records. Our collections date from 1645 to the present. Use this site to explore descriptions of our unique material including office records, manuscripts, still and moving images, maps, blueprints, and sound recordings.</p>
+                    <h3>Requesting Materials</h3>
                     <p>To set up an appointment to view materials, please send an email to <a href="mailto:research@records.nyc.gov">research@records.nyc.gov</a> noting collection number, box number, folder number, and folder description.</p>
    welcome_search_label: "Search the archives by keyword across all collections here:"
    welcome_page_title: DORIS Archives
